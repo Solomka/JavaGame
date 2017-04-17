@@ -1,8 +1,18 @@
 package ua.training.javaGame;
 
+/**
+ * Class that contains program constants
+ * 
+ * @author Solomka
+ * 
+ */
 public interface Constants {
 
-	Integer MIN_VALUE = 1;
-	Integer MAX_VALUE = 100;
+	int MIN_VALUE = 0;
+	int MAX_VALUE = 100;
 
+	/**
+	 * Max pseudorandom int value
+	 */
+	int RAND_MAX = 100;
 }
