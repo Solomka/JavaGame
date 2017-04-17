@@ -18,7 +18,16 @@ public class Model {
 	}
 
 	public void generateSecretValue() {
-		this.secretValue = new Random().nextInt((maxValue - minValue) + 1) + minValue;
+		this.secretValue = rand(minValue, maxValue);
+	}
+	
+	public int rand(int minValue, int maxValue){
+		return new Random().nextInt((maxValue - minValue) + 1) + minValue;
+		
+	}
+	
+	public int rand(){
+		return new Random().nextInt(maxValue);
 	}
 
 	public void addPrevAttempt(Integer attempt) {
