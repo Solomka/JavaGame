@@ -39,11 +39,11 @@ public class Controller {
 		int val = processIntValueWithScanner(scanner);
 
 		while (!checkUserGuess(val)) {
-			saveShowGuessingHistory(val);
+			view.printGameStory(model.getPrevAttempts());
 			val = processIntValueWithScanner(scanner);
 		}
 
-		saveShowGuessingHistory(val);
+		view.printGameStory(model.getPrevAttempts());
 		view.printMessage(View.WIN);
 	}
 
@@ -57,40 +57,34 @@ public class Controller {
 	private int processIntValueWithScanner(Scanner sc) {
 		view.printGameRules(model.getMinValue(), model.getMaxValue());
 
-		while (!sc.hasNextInt()) {
+		while ((!sc.hasNextInt())) {
 			view.printMessage(View.WRONG_INT_VALUE, View.TRY_AGAIN);
+			view.printGameStory(model.getPrevAttempts());
 			view.printGameRules(model.getMinValue(), model.getMaxValue());
 			sc.next();
 		}
-		return sc.nextInt();
-	}
 
-	/**
-	 * Adds user's int value guess to the model prevAttempts List and show the
-	 * List to the user
-	 * 
-	 * @param guess
-	 *            user's int value guess
-	 */
-	private void saveShowGuessingHistory(int guess) {
-		model.addPrevAttempt(guess);
-		view.printGameStory(model.getPrevAttempts());
+		return sc.nextInt();
 	}
 
 	/**
 	 * Checks correctness of the user's secretValue prediction. Changes
 	 * minValue/maxValue range values according to the user's prediction and
-	 * shows the appropriate message as a result of the user's prediction
+	 * shows the appropriate message
 	 * 
 	 * @param guess
 	 *            user's int value guess
 	 * @return true if user guessed the secretValue and false otherwise
 	 */
 	private boolean checkUserGuess(int guess) {
-		if (guess < model.getMinValue() || guess > model.getMaxValue()) {
+		if (!checkInRange(guess)) {
 			view.printMessage(View.WRONG_INT_RANGE, View.TRY_AGAIN);
 			return false;
-		} else if (guess < model.getSecretValue()) {
+		}
+
+		model.addPrevAttempt(guess);
+
+		if (guess < model.getSecretValue()) {
 			model.setMinValue(guess + 1);
 			view.printMessage(View.LESS_INPUT, View.TRY_AGAIN);
 			return false;
@@ -101,7 +95,20 @@ public class Controller {
 		} else {
 			return true;
 		}
-
 	}
 
+	/**
+	 * Checks if user's int value guess belongs to range
+	 * 
+	 * @param guess
+	 *            user's int value guess
+	 * @return
+	 */
+	private boolean checkInRange(int guess) {
+		if (guess < model.getMinValue() || guess > model.getMaxValue()) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
