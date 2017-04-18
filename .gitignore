@@ -1,8 +1,11 @@
 
 # Eclipse
 
-.classpath
 .project
+.metadata
+bin/
+build/
+.classpath
 .settings/
 
 # Maven
@@ -12,7 +15,6 @@ target/
 
 #Eclipse STS
 
-.settings/
 .springBeans
 
 # Intellij
