@@ -34,6 +34,13 @@ public class Model {
 	public void setSecretValue() {
 		this.secretValue = rand(minValue, maxValue);
 	}
+	
+	/**
+	 * Sets secretValue from Enum 
+	 */
+	public void setEnumSecretValue(){
+		this.secretValue = Prediction.EIGHTY_ONE.getValue();
+	}	
 
 	public void setPseudoSecretValue() {
 		this.secretValue = rand();

@@ -48,6 +48,31 @@ public class Controller {
 	}
 
 	/**
+	 * Provides enum simulation of the user's interaction. Sets model's values
+	 * rang and Enum generated secretValue.
+	 */
+	public void processUserEnumSimulation() {
+
+		model.setValuesRange(Constants.MIN_VALUE, Constants.MAX_VALUE);
+		model.setEnumSecretValue();
+
+		System.out.println("Secret Value: " + model.getSecretValue());
+
+		view.printMessage(View.WELCOME);
+		view.printGameRules(model.getMinValue(), model.getMaxValue());
+
+		Prediction[] userPredictions = Prediction.values();
+
+		for (int i = 0; (i < userPredictions.length) && (!checkUserGuess(userPredictions[i].getValue())); ++i) {
+			view.printGameStory(model.getPrevAttempts());
+			view.printGameRules(model.getMinValue(), model.getMaxValue());
+		}
+
+		view.printGameStory(model.getPrevAttempts());
+		view.printMessage(View.WIN);
+	}
+
+	/**
 	 * Ensures user's int value typing
 	 * 
 	 * @param sc

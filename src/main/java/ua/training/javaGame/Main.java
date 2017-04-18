@@ -10,6 +10,7 @@ public class Main {
 		Controller controller = new Controller(model, view);
 
 		// Start user's interaction
-		controller.processUser();
+		// controller.processUser();
+		controller.processUserEnumSimulation();
 	}
 }

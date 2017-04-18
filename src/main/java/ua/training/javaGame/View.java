@@ -33,6 +33,7 @@ public class View {
 	public static String RIGHT_PARANTHESIS = " ]";
 	public static String COLON = ": ";
 	public static String EMPTY_STR = " ";
+	public static String NEW_LINE = "\n";
 
 	/**
 	 * Shows constructed message
@@ -70,7 +71,7 @@ public class View {
 	 *            higher range value
 	 */
 	public void printGameRules(int minValue, int maxValue) {
-		printMessage(View.GAME_RULES, View.LEFT_PARENTHESIS, Integer.toString(minValue), View.EMPTY_STR,
+		printMessage(View.NEW_LINE, View.GAME_RULES, View.LEFT_PARENTHESIS, Integer.toString(minValue), View.EMPTY_STR,
 				Integer.toString(maxValue), View.RIGHT_PARANTHESIS, View.COLON);
 	}
 
