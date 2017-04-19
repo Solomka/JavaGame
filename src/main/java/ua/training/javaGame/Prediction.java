@@ -20,6 +20,13 @@ public enum Prediction {
 		return value;
 	}
 
+	/**
+	 * Provides Prediction for a given int value
+	 * 
+	 * @param value
+	 *            value describing Prediction
+	 * @return Prediction or null if appropriate prediction wasn't found
+	 */
 	public static Prediction getPredicitonByValue(int value) {
 		for (final Prediction pred : Prediction.values()) {
 			if (pred.getValue() == value) {
