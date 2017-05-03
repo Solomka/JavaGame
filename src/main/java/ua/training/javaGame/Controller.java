@@ -110,11 +110,11 @@ public class Controller {
 		model.addPrevAttempt(guess);
 
 		if (guess < model.getSecretValue()) {
-			model.setMinValue(guess + 1);
+			model.setValuesRange(guess + 1, model.getMaxValue());
 			view.printMessage(View.LESS_INPUT, View.TRY_AGAIN);
 			return false;
 		} else if (guess > model.getSecretValue()) {
-			model.setMaxValue(guess - 1);
+			model.setValuesRange(model.getMinValue(), guess - 1);
 			view.printMessage(View.HIGHER_INPUT, View.TRY_AGAIN);
 			return false;
 		} else {

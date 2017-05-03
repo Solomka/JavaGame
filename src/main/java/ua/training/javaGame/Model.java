@@ -6,8 +6,8 @@ import java.util.Random;
 
 /**
  * <p>
- * Class that represents Model and contains information about guessing value range, secretValue and
- * provides methods for their determination and obtaining
+ * Class that represents Model and contains information about guessing value
+ * range, secretValue and provides methods for their determination and obtaining
  * </p>
  * 
  * @author Solomka
@@ -23,7 +23,7 @@ public class Model {
 	private List<Integer> prevAttempts = new ArrayList<>();
 
 	public void setValuesRange(int minValue, int maxValue) {
-		if ((minValue < Constants.MIN_VALUE) || (maxValue > Constants.MAX_VALUE) || (minValue >= maxValue)) {
+		if ((minValue < Constants.MIN_VALUE) || (maxValue > Constants.MAX_VALUE) || (minValue > maxValue)) {
 			throw new IllegalArgumentException("wrong maxValue or/and minValue");
 		}
 
@@ -34,13 +34,13 @@ public class Model {
 	public void setSecretValue() {
 		this.secretValue = rand(minValue, maxValue);
 	}
-	
+
 	/**
-	 * Sets secretValue from Enum 
+	 * Sets secretValue from Enum
 	 */
-	public void setEnumSecretValue(){
+	public void setEnumSecretValue() {
 		this.secretValue = Prediction.EIGHTY_ONE.getValue();
-	}	
+	}
 
 	public void setPseudoSecretValue() {
 		this.secretValue = rand();
@@ -84,16 +84,8 @@ public class Model {
 		return minValue;
 	}
 
-	public void setMinValue(int minValue) {
-		this.minValue = minValue;
-	}
-
 	public int getMaxValue() {
 		return maxValue;
-	}
-
-	public void setMaxValue(int maxValue) {
-		this.maxValue = maxValue;
 	}
 
 	public int getSecretValue() {
@@ -102,12 +94,6 @@ public class Model {
 
 	public List<Integer> getPrevAttempts() {
 		return prevAttempts;
-	}
-
-	@Override
-	public String toString() {
-		return "Model [minValue=" + minValue + ", maxValue=" + maxValue + ", secretValue=" + secretValue
-				+ ", prevAttempts=" + prevAttempts + "]";
 	}
 
 }
