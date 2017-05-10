@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * <p>
  * Class that represents Model and contains information about guessing value
  * range, secretValue and provides methods for their determination and obtaining
- * </p>
  * 
  * @author Solomka
  *

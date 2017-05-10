@@ -3,9 +3,7 @@ package ua.training.javaGame;
 import java.util.Scanner;
 
 /**
- * <p>
  * Class that represents Controller and serves user's interaction process
- * </p>
  * 
  * @author Solomka
  *

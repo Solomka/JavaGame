@@ -14,26 +14,26 @@ import java.util.List;
 public class View {
 
 	// text's constants
-	public static String WELCOME = "WELCOME!";
+	static String WELCOME = "WELCOME!";
 
-	public static String GAME_RULES = "Enter int number between ";
+	static String GAME_RULES = "Enter int number between ";
 
-	public static String WRONG_INT_VALUE = "Wrong int value.";
-	public static String WRONG_INT_RANGE = "Your guess is out of range.";
-	public static String LESS_INPUT = "Your guess was too low! ";
-	public static String HIGHER_INPUT = "Your guess was too high! ";
+	static String WRONG_INT_VALUE = "Wrong int value.";
+	static String WRONG_INT_RANGE = "Your guess is out of range.";
+	static String LESS_INPUT = "Your guess was too low! ";
+	static String HIGHER_INPUT = "Your guess was too high! ";
 
-	public static String TRY_AGAIN = "Try again!";
+	static String TRY_AGAIN = "Try again!";
 
-	public static String WIN = "Congratulations! You guessed the secret value =)";
+	static String WIN = "Congratulations! You guessed the secret value =)";
 
-	public static String PREVIOUS_ATTEMPTS = "Your predictions: ";
+	static String PREVIOUS_ATTEMPTS = "Your predictions: ";
 
-	public static String LEFT_PARENTHESIS = "[ ";
-	public static String RIGHT_PARANTHESIS = " ]";
-	public static String COLON = ": ";
-	public static String EMPTY_STR = " ";
-	public static String NEW_LINE = "\n";
+	static String LEFT_PARENTHESIS = "[ ";
+	static String RIGHT_PARANTHESIS = " ]";
+	static String COLON = ": ";
+	static String EMPTY_STR = " ";
+	static String NEW_LINE = "\n";
 
 	/**
 	 * Shows constructed message
