@@ -34,11 +34,8 @@ public class Controller {
 
 		view.printMessage(View.WELCOME);
 
-		int val = processIntValueWithScanner(scanner);
-
-		while (!checkUserGuess(val)) {
+		while (!checkUserGuess(processIntValueWithScanner(scanner))) {
 			view.printGameStory(model.getPrevAttempts());
-			val = processIntValueWithScanner(scanner);
 		}
 
 		view.printGameStory(model.getPrevAttempts());
